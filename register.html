@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>تسجيل غرفة جديدة</title> 
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-image: url('https://i.pinimg.com/originals/0b/59/34/0b5934b623f3c6f5377f221959d77982.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+        }
+        h1 {
+            font-size: 60px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+            color: #007bff; /* اللون الأزرق */
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 80%;
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745; /* اللون الأخضر للزر */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838; /* لون أغمق عند التمرير */
+        }
+    </style> 
+ </head> 
+ <body> 
+  <h1>تسجيل غرفة جديدة</h1> 
+
+  <label for="newRoomName">اسم الغرفة:</label>
+  <br>
+  <input type="text" id="newRoomName" placeholder="أدخل اسم الغرفة">
+  <br>
+
+  <label for="newRoomPassword">كلمة السر للغرفة:</label>
+  <br>
+  <input type="password" id="newRoomPassword" placeholder="أدخل كلمة السر">
+  <br>
+
+  <button id="registerRoomBtn">تسجيل</button>
+
+  <script>
+        document.getElementById('registerRoomBtn').addEventListener('click', function() {
+            const roomName = document.getElementById('newRoomName').value.trim();
+            const roomPassword = document.getElementById('newRoomPassword').value.trim();
+
+            if (roomName !== "" && roomPassword !== "") {
+                alert(`تم تسجيل الغرفة: ${roomName} بكلمة السر.`);
+                // العودة للصفحة الرئيسية
+                window.location.href = "index.html";
+            } else {
+                alert("يرجى إدخال اسم الغرفة وكلمة السر!");
+            }
+        });
+    </script> 
+ 
+</body></html>
